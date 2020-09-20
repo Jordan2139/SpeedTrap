@@ -52,7 +52,7 @@ AddEventHandler('AllowSpeed', function()
         local players = GetAllPlayers()
         for i=1, #players do
             if IsPlayerAceAllowed(players[i], 'jordan.gofastwatch') or src <= 0 then 
-                TriggerClientEvent('chatMessage', players[i], "^9[^7God'sEye^9] Player ^1" .. GetPlayerName(src) .. " ^3is going over " .. Config.maxspeedwarning .. "^1")
+                TriggerClientEvent('chatMessage', players[i], "^9[^7SpeedTrap^9] Player ^1" .. GetPlayerName(src) .. " ^3is going over " .. Config.maxspeedwarning .. "^1")
             end
     end
 end
