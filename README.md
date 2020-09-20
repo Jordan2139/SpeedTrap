@@ -13,8 +13,8 @@ Essentially SpeedTrap is a script that watches for FailRP and people going too f
 --   CONFIG YOUR MAX ALLOWED SPEED BEFORE WARNING   --
 ------------------------------------------------------
 Config = {
-    warningmsg = "You Must Be Whitelisted To Go Over 150 MPH Please Slowdown Or An Admin Will Be Alerted!",
-    maxspeedwarning = 100
+    warningmsg = "You Must Be Whitelisted To Go Over 150 MPH Please Slowdown Or An Admin Will Be Alerted!", -- Message
+    maxspeedwarning = 150 -- Speed Before Warning
     }
 --------------------------
 -- ^^^ DO THAT HERE ^^^ -- 
