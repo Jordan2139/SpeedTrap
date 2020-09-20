@@ -4,6 +4,7 @@ Essentially SpeedTrap is a script that watches for FailRP and people going too f
 
 ## Permission Setup
 `add_ace group.member jordan.gofast allow` - Allowed to go over your set speed
+
 `add_ace group.staff jordan.gofastwatch allow` - See alerts for speed
 
 ## Configuration
