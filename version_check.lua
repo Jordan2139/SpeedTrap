@@ -32,7 +32,7 @@ PerformHttpRequest( "https://raw.githubusercontent.com/Jordan2139/versions/maste
 	if ( text ~= nil ) then 
 		-- Print out the current and latest version 
 		print( "  ||    Current version: " .. curVer )
-		print( "  ||    Latest recommended version: " .. text .."\n  ||" )
+		print( "  ||    Latest recommended version: " .. text .."  || \n  ||" )
 		
 		-- If the versions are different, print it out
 		if ( text ~= curVer ) then
