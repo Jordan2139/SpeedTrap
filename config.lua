@@ -8,14 +8,11 @@
 ------------------------------------------------------
 Config = {
     warningmsg = "You Must Be Whitelisted To Go Over 150 MPH Please Slowdown Or An Admin Will Be Alerted!",
-    maxspeedwarning = 100
-    }
+    maxspeedwarning = 50,
+    StaffAlert = "^9[^7SpeedTrap^9] Player ^1{PLAYER} ^3is going over ^1{SPEED}",
+    StaffAlertCooldown = 60, -- How many seconds should cooldowns be for staff alert message?
+    debugEnabled = false,
+}
 --------------------------
 -- ^^^ DO THAT HERE ^^^ -- 
 --------------------------
-
-
-discordRoleIds = {
-    "Role_ID",
-    "Role_ID"
-}
