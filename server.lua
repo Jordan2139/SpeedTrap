@@ -7,27 +7,7 @@
         -- DO NOT TOUCH THIS FILE OR YOU /WILL/ FUCK SHIT UP! EDIT THE CONFIG.LUA --
 -- DO NOT BE STUPID AND WHINE TO ME ABOUT THIS BEING BROKEN IF YOU TOUCHED THE LINES BELOW. --
 ----------------------------------------------------------------------------------------------
-
-
-function GetPermissions(src)
-    for k, v in ipairs(GetPlayerIdentifiers(src)) do 
-        if string.sub(v, 1, string.len("discord:")) == "discord" then
-            identifierDiscord = v
-        end
-    end
-    if identifierDiscord then
-        exports['discordroles']:isRolePresent(src, discordRoleIds, function(hasRole, roles)
-            if not roles then
-                return false
-            end
-            if hasRole then
-                return true
-            else
-                return false
-            end
-        end)
-    end 
-end
+debugEnabled = Config.debugEnabled;
 
 function GetAllPlayers()
     local players = {}
@@ -38,24 +18,45 @@ function GetAllPlayers()
 
     return players
 end
+AddEventHandler('playerDropped', function (reason)
+    Cooldown[source] = nil;
+end)
 
-
+Cooldown = {}
+Citizen.CreateThread(function()
+    while true do 
+        Citizen.Wait(1000); -- Every second
+        for k, v in pairs(Cooldown) do 
+            Cooldown[k] = Cooldown[k] - 1;
+            if Cooldown[k] <= 0 then 
+                Cooldown[k] = nil;
+            end
+        end
+    end
+end)
 RegisterNetEvent('AllowSpeed')
 AddEventHandler('AllowSpeed', function()
     local src = source;
-    if IsPlayerAceAllowed(src, "jordan.gofast") or GetPermissions(src) or src <= 0 then
+    if debugEnabled then 
+        print("[SpeedTrap Debug] AllowSpeed event ran...");
+    end
+    if IsPlayerAceAllowed(src, "jordan.gofast") then
         TriggerClientEvent('AllowSpeedClient', src)
     else
-    TriggerClientEvent('DoAllowSpeedClient', src)
-    print('noperms = poop')
-    Wait(6000)
-        local players = GetAllPlayers()
-        for i=1, #players do
-            if IsPlayerAceAllowed(players[i], 'jordan.gofastwatch') or src <= 0 then 
-                TriggerClientEvent('chatMessage', players[i], "^9[^7SpeedTrap^9] Player ^1" .. GetPlayerName(src) .. " ^3is going over " .. Config.maxspeedwarning .. "^1")
+        TriggerClientEvent('DoAllowSpeedClient', src)
+        if Cooldown[src] == nil then 
+            local players = GetAllPlayers()
+            for i=1, #players do
+                if IsPlayerAceAllowed(players[i], 'jordan.gofastwatch') then 
+                    TriggerClientEvent('chatMessage', players[i], Config.StaffAlert:gsub("{PLAYER}", 
+                        GetPlayerName(src)):gsub("{SPEED}", Config.maxspeedwarning));
+                end
             end
+            Cooldown[src] = Config.StaffAlertCooldown;
+        else 
+            -- They are on cooldown, we do nothing for now 
+        end
     end
-end
 end)
 
 print("\n^7Simple Whitelisted Speed Warning | ^6 Made By Jordan.#2139^7")
