@@ -25,4 +25,10 @@ Config = {
 }
 --------------------------
 -- ^^^ DO THAT HERE ^^^ -- 
---------------------------```
+--------------------------
+```
+# Acknowledgments
+## - Badger#9884 (Jared Scarito)
+[![Discord](https://i.imgur.com/yisqCbU.png)](https://discord.gg/FQHCCj5)
+
+[![5M](https://i.imgur.com/TSDsZMF.png)](https://forum.cfx.re/u/officialbadger/summary)
