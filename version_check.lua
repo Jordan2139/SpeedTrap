@@ -35,7 +35,7 @@ PerformHttpRequest( "https://raw.githubusercontent.com/Jordan2139/versions/maste
 		print( "  ||    Latest recommended version: " .. text .."  || \n  ||" )
 		
 		-- If the versions are different, print it out
-		if ( text == curVer ) then
+		if ( text ~= curVer ) then
 			print( "  ||    ^1Your SpeedTrap version is outdated, visit the FiveM forum post to get the latest version.\n^0  \\\\\n" )
 		else
 			print( "  ||    ^2SpeedTrap is up to date!\n^0  ||\n  \\\\\n" )
