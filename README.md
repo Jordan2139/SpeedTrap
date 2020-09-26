@@ -9,7 +9,7 @@ Essentially SpeedTrap is a script that watches for FailRP and people going too f
 
 ## Configuration
 ```------------------------------------------------------------
--- Simple Whitelisted Speed Warning, Made By Jordan.#2139 --
+-- SpeedTrap- A Simple FiveM Script, Made By Jordan.#2139 --
 ------------------------------------------------------------
 
 ------------------------------------------------------
