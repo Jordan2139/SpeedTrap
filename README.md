@@ -8,7 +8,8 @@ Essentially SpeedTrap is a script that watches for FailRP and people going too f
 `add_ace group.staff jordan.gofastwatch allow` - See alerts for speed
 
 ## Configuration
-```------------------------------------------------------------
+```
+------------------------------------------------------------
 -- SpeedTrap- A Simple FiveM Script, Made By Jordan.#2139 --
 ------------------------------------------------------------
 
