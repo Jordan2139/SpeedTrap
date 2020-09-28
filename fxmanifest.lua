@@ -9,7 +9,7 @@ game "gta5"
 name "SpeedTrap"
 description "A simple failrp speed monitor"
 author "Jordan.#2139"
-version "v1.0.2"
+version "v1.1.0"
 
 
 client_script "config.lua"
