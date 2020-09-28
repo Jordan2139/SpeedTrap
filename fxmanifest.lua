@@ -7,7 +7,7 @@ game "gta5"
 
 -- Define the resource metadata
 name "SpeedTrap"
-description "A simple failrp speed monitor"
+description "A Simple FailRP Driving Monitor"
 author "Jordan.#2139"
 version "v1.1.0"
 
