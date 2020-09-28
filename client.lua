@@ -34,20 +34,23 @@ Citizen.CreateThread(function()
         local player = GetPlayerPed(-1)
         local veh = GetVehiclePedIsIn(player)
         local mph = math.ceil(GetEntitySpeed(veh) * 2.23)
+        local class = GetVehicleClass(veh)
             
         if warnplayer then
             warn(Config.warningmsg)
         end
-
-        if GetPedInVehicleSeat(veh, -1) == player then
-            if mph > Config.maxspeedwarning then
-                if not warningstring then 
-                    TriggerServerEvent('AllowSpeed')
+            if class ~= 15 and class ~= 16 then
+                if GetPedInVehicleSeat(veh, -1) == player then
+                    if mph > Config.maxspeedwarning then
+                        if not warningstring then 
+                            TriggerServerEvent('AllowSpeed')
+                        end
+                    else
+                    warnplayer = false;
+                    warningstring = false;
+                    end
                 end
-            else
-                warnplayer = false;
-                warningstring = false;
-            end
+        else
         end
     end
 end)
