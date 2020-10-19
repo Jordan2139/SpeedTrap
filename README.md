@@ -35,3 +35,6 @@ Config = {
 [![Discord](https://i.imgur.com/yisqCbU.png)](https://discord.gg/FQHCCj5)
 
 [![5M](https://i.imgur.com/TSDsZMF.png)](https://forum.cfx.re/u/officialbadger/summary)
+
+# TJH Development Discord
+[![Developer Discord](https://discordapp.com/api/guilds/696266949348425739/widget.png?style=banner4)](https://discord.com/invite/x7cYjg5)
